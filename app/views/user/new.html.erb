@@ -1,0 +1,10 @@
+ <%= form_for(signup_path , method: :post , model: User , local: true) do |f| %>
+        
+    <%= f.label "name "%>
+    <%= f.text_field (:name) %>
+    <br><br>
+    <%= f.label "Email "%>
+    <%= f.text_field (:email) %>
+    <br>
+    <%= f.submit "Save" %>
+<% end %>

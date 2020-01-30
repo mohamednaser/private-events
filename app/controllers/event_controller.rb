@@ -19,6 +19,12 @@ class EventController < ApplicationController
     @events = Event.all
   end
 
+  def show
+    @event = Event.find(params[:id])
+    @attendees = EventAttendance.find_by(event_id: params[:id])
+  end
+  
+
   def destroy; end
 
   private

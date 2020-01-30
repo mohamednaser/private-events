@@ -1,0 +1,9 @@
+<h1>Event</h1>
+<p>Title: <%= @event.title %></p>
+<p>Description: <%= @event.description %></p>
+<ul>
+  <% @attendees.each |person| %>
+    <li><%= person.name %></li>
+    <li><%= person.email %></li>
+  <% end %>
+</ul>

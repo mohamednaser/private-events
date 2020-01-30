@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
   get '/events', to: 'event#index'
   get '/events/new', to: 'event#new'
+  get '/events/:id', to: 'event#show'
   post '/events/new', to: 'event#create'
-  delete '/events/{id}', to: 'event#destroy'
+  delete '/events/:id', to: 'event#destroy'
 
   get '/profile', to: 'user#show'
 

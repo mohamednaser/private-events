@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
+# main event applciation
 class EventController < ApplicationController
-
-  before_action :check_login 
+  before_action :check_login
 
   # get url
   def new
@@ -11,7 +11,7 @@ class EventController < ApplicationController
 
   # we will used it for post parmaters
   def create
-    @curent_user.events.create(event_params)
+    @curent_user.events.build(event_params).save
     redirect_to events_path
   end
 
@@ -29,6 +29,6 @@ class EventController < ApplicationController
 
   def check_login
     curent_user
-    redirect_to login_path if !is_logged?
+    redirect_to login_path unless logged
   end
 end

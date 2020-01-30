@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'event_attendance/create'
+  get 'event_attendance/new'
+  get 'event_attendance/destroy'
   post '/login', to: 'session#create'
   get '/login', to: 'session#new'
 

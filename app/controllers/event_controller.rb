@@ -6,6 +6,8 @@ class EventController < ApplicationController
   end
 
   def index
+    @events = Event.all
+  
   end
 
   def destroy

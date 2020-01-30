@@ -2,8 +2,14 @@
 
 class SessionController < ApplicationController
   def create
-    @curent_user ||= User.find(params[:id])
-    cookies.permanent[:user_id] = params[:id]
+    login(params[:id])
+
+    if is_logged?
+      cookies.permanent[:user_id] = params[:id]
+      redirect_to profile_path
+    else
+      redirect_to login_path
+    end
   end
 
   def new; end

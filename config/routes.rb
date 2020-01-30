@@ -9,5 +9,12 @@ Rails.application.routes.draw do
 
   post '/logout', to: 'session#destroy'
 
+  get '/events', to: 'event#index'
+  get '/events/new', to: 'event#new'
+  post '/events/new', to: 'event#create'
+  delete '/events/{id}', to: 'event#destroy'
+
+  get '/profile', to: 'user#show'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -4,7 +4,6 @@ class UserController < ApplicationController
   # will be post method
   def create
     User.create(user_params)
-    
   end
 
   def new

@@ -10,9 +10,13 @@
         <h5 class="card-title"> <%= event.title %> </h5>
         <p class="card-text"> <%= event.description %></p>
         <p class="card-text"> Number of attendees : <%= event.EventAttendance.count %></p>
-       <%= link_to  "view", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%> 
-       <%= link_to  "attend", events_path + '/' + event.id.to_s , class: 'btn btn-success'%> 
-       <%= link_to  "delete", events_path + '/' + event.id.to_s , method: :delete , class: 'btn btn-danger' %> 
+       <%= link_to  "View", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%>
+       <% if event.is_attend? %> 
+        <%= link_to  "Already Attended", '#' , class: 'btn btn-success'%> 
+       <% else %>
+        <%= link_to  "Attend", events_path + '/attend/' + event.id.to_s , class: 'btn btn-primary'%> 
+       <% end %> 
+
       </div>
     </div>
 

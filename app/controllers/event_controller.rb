@@ -25,6 +25,19 @@ class EventController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  # function to attend event
+  def attend
+    @curent_user.eventattendanced.build(event_id: params[:id]).save
+
+    redirect_to profile_path
+  end
+
+  def cancel_attend
+    @curent_user.eventattendanced.delete(id: params[:id]).save
+
+    redirect_to profile_path
+  end
+
   private
 
   def event_params

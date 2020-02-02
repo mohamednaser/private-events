@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post '/events/new', to: 'event#create'
   delete '/events/{id}', to: 'event#destroy'
   get '/events/:id', to: 'event#show'
+  get '/events/attend/:id', to: 'event#attend'
+  get '/events/cancel/:id', to: 'event#cancel_attend'
 
 
   get '/profile', to: 'user#show'

@@ -14,6 +14,9 @@ class SessionController < ApplicationController
   end
 
   def new; end
-
-  def destroy; end
+  
+  def destroy
+    logout
+    redirect_to login_path
+  end
 end

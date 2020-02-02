@@ -1,15 +1,17 @@
 <div class = 'insider-container'>
-    <h1> Welcome To :  <%= @event.title %> Event</h1>
+    <h1> Welcome To :  <%= @event.title %> Event <%= link_to  "All Events", events_path , class: 'btn btn-primary'%> 
+    </h1>
 
-    <div class= "visitors">
-        <div class="list-group">
-        <button type="button" class="list-group-item list-group-item-action active">
-            visitors
-        </button>
-        <% @event.attended_users.all.each do |visitor| -%>           
-            <a class="list-group-item list-group-item-action"> <%= visitor.name%></a>
-        <% end -%>
+    <div class="insider-container">
+        <div class= "visitors">
+            <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active">
+                visitors
+            </button>
+            <% @event.attended_users.all.each do |visitor| -%>           
+                <a class="list-group-item list-group-item-action"> <%= visitor.name%></a>
+            <% end -%>
+            </div>
         </div>
     </div>
-
 </div>

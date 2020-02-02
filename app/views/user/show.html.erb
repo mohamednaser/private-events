@@ -1,7 +1,7 @@
 <h1>Welcome <%= @curent_user.name%></h1>
 
 <div class="profile-options"> 
-  <%= link_to  "Logout", logout_path , class: 'btn btn-danger'%> 
+  <%= link_to  "Logout", logout_path , class: 'btn btn-danger' , method: :delete%> 
   <%= link_to  "List All Events", events_path , class: 'btn btn-primary'%> 
 </div>
 

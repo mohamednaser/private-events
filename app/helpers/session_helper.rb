@@ -13,4 +13,9 @@ module SessionHelper
   def logged
     !@curent_user.nil?
   end
+
+  def logout 
+    @curent_user = nil
+    cookies.permanent[:user_id] = nil    
+  end
 end

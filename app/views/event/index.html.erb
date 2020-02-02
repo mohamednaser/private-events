@@ -1,22 +1,21 @@
-<h1>Event#index</h1>
- 
- <table class="table">
-   <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-   <% @events.each do |event| -%>
-    <tr>
-       <td> <%= event.title %> </td>
-       <td> <%= event.description %> </td>
-       <td> <%= link_to  "Destroy", events_path + '/' + event.id.to_s , method: :delete %> </td>
+<h1>Event#index <%= link_to  "Create Event", events_new_path , class: "btn btn-primary"%>
+<%= link_to  "My Profile", profile_path , class: "btn btn-primary"%>
+</h1> 
 
-    </tr>
-    <% end -%>
-  </tbody>
-</table>
+<div class="events-holder">
+    <% @events.each do |event| -%>        
+    <div class="card card-mb" style="width: 25%;">
+      <img class="card-img-top" src="https://via.placeholder.com/180.png/09f/fff" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> <%= event.title %> </h5>
+        <p class="card-text"> <%= event.description %></p>
+        <p class="card-text"> Number of attendees : <%= event.EventAttendance.count %></p>
+       <%= link_to  "view", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%> 
+       <%= link_to  "attend", events_path + '/' + event.id.to_s , class: 'btn btn-success'%> 
+       <%= link_to  "delete", events_path + '/' + event.id.to_s , method: :delete , class: 'btn btn-danger' %> 
+      </div>
+    </div>
 
-<%= link_to  "Create Event", events_new_path %>
+   <% end -%>
+  </div>
+  </div>

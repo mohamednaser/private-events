@@ -1,20 +1,32 @@
 <h1>Welcome <%= @curent_user.name%></h1>
- 
- <table class="table">
-   <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-   <% @curent_user.events.each do |event| -%>
-    <tr>
-       <td> <%= event.title %> </td>
-       <td> <%= event.title %> </td>
-    </tr>
-    <% end -%>
-  </tbody>
-</table>
 
-<%= link_to  "Create Event", events_new_path %>
+<div class="profile-options"> 
+  <%= link_to  "Logout", logout_path , class: 'btn btn-danger'%> 
+  <%= link_to  "List All Events", events_path , class: 'btn btn-primary'%> 
+</div>
+
+ <div class = 'insider-container'>
+    <div class= "created_events">
+        <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+            Created Events
+        </button>
+        <% @curent_user.events_created.all.each do |event| -%>           
+           <%= link_to  event.title, events_path + '/' + event.id.to_s , class: 'list-group-item list-group-item-action'%> 
+        <% end -%>
+        <%= link_to  "Create New", events_new_path , class: 'btn btn-primary'%> 
+        </div>
+    </div>
+
+    <div class= "created_events">
+        <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+            Want To Attend Events
+        </button>
+        <% @curent_user.attendedevent.all.each do |event| -%>           
+           <%= link_to  event.title, events_path + '/' + event.id.to_s , class: 'list-group-item list-group-item-action'%> 
+        <% end -%>
+
+        </div>
+    </div>
+</div>

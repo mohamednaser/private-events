@@ -11,7 +11,7 @@ class EventController < ApplicationController
 
   # we will used it for post parmaters
   def create
-    @curent_user.events.build(event_params).save
+    @curent_user.events_created.build(event_params).save
     redirect_to events_path
   end
 
@@ -20,6 +20,10 @@ class EventController < ApplicationController
   end
 
   def destroy; end
+
+  def show
+    @event = Event.find(params[:id])
+  end
 
   private
 

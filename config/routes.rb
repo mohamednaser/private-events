@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'event_attendance/create'
-  get 'event_attendance/new'
-  get 'event_attendance/destroy'
   post '/login', to: 'session#create'
   get '/login', to: 'session#new'
 
@@ -16,6 +13,8 @@ Rails.application.routes.draw do
   get '/events/new', to: 'event#new'
   post '/events/new', to: 'event#create'
   delete '/events/{id}', to: 'event#destroy'
+  get '/events/:id', to: 'event#show'
+
 
   get '/profile', to: 'user#show'
 

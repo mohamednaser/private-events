@@ -21,15 +21,23 @@ This project was developed by:
 ## Done Work
 
 - [x] built database structure for (Users, Events) tables.
-- [x] create login , signup users
-- [x] allow the users to create event 
-- [x] built profile page 
-- [x] list upcoming and past events in profile page  
-- [x] buld all events page 
-- [x] deivide all events page into two section upcoming and past sections 
-- [x] allow user to attend event 
-- [x] apear basic infocration for every event in all events page 
-- [x] develop scopes to get pst and upcoming events in events model
+- [x] create a login , signup users.
+- [x] allows users to create an event .
+- [x] built a profile page.
+- [x] list upcoming and past events on the profile page.
+- [x] build all events page.
+- [x] divide all events page into two sections upcoming and past sections.
+- [x] allows a user to attend an event.
+- [x] appear basic information for every event in all events page. 
+- [x] develop scopes to get pst and upcoming events in the events model.
+
+## Demo 
+![loginpage](./storage/signup.png)
+![loginpage](./storage/aftersignup.png)
+![loginpage](./storage/login.png)
+![loginpage](./storage/profile.png)
+![loginpage](./storage/allevents.png)
+![loginpage](./storage/newevent.png)
 
 ## Setup
 

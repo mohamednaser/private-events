@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 class Event < ApplicationRecord
-  belongs_to :creator, class_name: 'User'
+  belongs_to :user
+
+  scope :upcoming, -> { where("date > ?" , DateTime.now.to_date)}
+  scope :past, -> { where("date < ?" , DateTime.now.to_date)}
+
+  # Ex:- scope :active, -> {where(:active => true)}
 
   has_many :EventAttendance
   has_many :attended_users, through: :EventAttendance , :source => 'user'

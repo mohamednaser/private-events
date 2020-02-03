@@ -15,7 +15,7 @@
         <p class="card-text"> created at : <%= event.created_at.to_date %></p>
 
        <%= link_to  "View", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%>
-       <% if event.is_attend?(@curent_user.id) %> 
+       <% if event.attend?(@curent_user.id) %> 
         <%= link_to  "Already Attended", '#' , class: 'btn btn-success'%> 
        <% else %>
         <%= link_to  "Attend", events_path + '/attend/' + event.id.to_s , class: 'btn btn-primary'%> 
@@ -42,7 +42,7 @@
         <p class="card-text"> created at : <%= event.created_at.to_date %></p>
 
        <%= link_to  "View", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%>
-       <% if event.is_attend?(@curent_user.id) %> 
+       <% if event.attend?(@curent_user.id) %> 
         <%= link_to  "Already Attended", '#' , class: 'btn btn-success'%> 
        <% else %>
         <%= link_to  "Attend", events_path + '/attend/' + event.id.to_s , class: 'btn btn-primary'%> 

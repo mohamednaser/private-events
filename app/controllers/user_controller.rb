@@ -1,11 +1,9 @@
-# frozen_string_literal: true
-
 # user controller
 class UserController < ApplicationController
   # will be post method
   def create
     user_obj = User.create(user_params)
-    
+
     redirect_to login_path, notice: "signup success your id is #{user_obj.id}"
   end
 
@@ -20,6 +18,6 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name , :email)
+    params.require(:user).permit(:name, :email)
   end
 end

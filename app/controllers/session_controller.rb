@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Session Controller
 class SessionController < ApplicationController
   def create
@@ -9,12 +7,12 @@ class SessionController < ApplicationController
       cookies.permanent[:user_id] = params[:id]
       redirect_to profile_path
     else
-      redirect_to signup_path , notice: 'error in id'
+      redirect_to signup_path, notice: 'error in id'
     end
   end
 
   def new; end
-  
+
   def destroy
     logout
     redirect_to login_path

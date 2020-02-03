@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Session Helper
 module SessionHelper
   def curent_user
@@ -14,8 +12,8 @@ module SessionHelper
     !@curent_user.nil?
   end
 
-  def logout 
+  def logout
     @curent_user = nil
-    cookies.permanent[:user_id] = nil    
+    cookies.permanent[:user_id] = nil
   end
 end

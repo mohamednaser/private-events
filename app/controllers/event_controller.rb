@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # main event applciation
 class EventController < ApplicationController
   before_action :check_login
@@ -41,7 +39,7 @@ class EventController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :description , :date)
+    params.require(:event).permit(:title, :description, :date)
   end
 
   def check_login

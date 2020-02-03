@@ -11,7 +11,7 @@
   </div>
   <div class="form-group">
     <%= f.label :date, "description:" , class: 'exampleInputEmail1'%>
-    <%= f.date_field :date , class: "form-control" %>
+    <%= f.date_field :date , class: "form-control", value: DateTime.now.to_date %>
   </div>
     <%= f.submit "Save Event" , class: "btn btn-primary"%>
 

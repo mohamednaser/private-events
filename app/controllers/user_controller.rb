@@ -4,10 +4,14 @@
 class UserController < ApplicationController
   # will be post method
   def create
-    User.create(user_params)
+    user_obj = User.create(user_params)
+    
+    redirect_to login_path, notice: "signup success your id is #{user_obj.id}"
   end
 
-  def new; end
+  def new
+    @user = User.new
+  end
 
   def show
     curent_user
@@ -16,6 +20,6 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:id)
+    params.require(:user).permit(:name , :email)
   end
 end

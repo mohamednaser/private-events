@@ -11,6 +11,8 @@
         <button type="button" class="list-group-item list-group-item-action active">
             Created Events
         </button>
+           <%= link_to  "You didn't created any event Till now ", events_path , class: 'list-group-item list-group-item-action' if  @curent_user.created_events.empty? %> 
+
         <% @curent_user.created_events.all.each do |event| -%>           
            <%= link_to  event.title, events_path + '/' + event.id.to_s , class: 'list-group-item list-group-item-action'%> 
         <% end -%>
@@ -21,7 +23,7 @@
     <div class= "created_events">
         <div class="list-group">
         <button type="button" class="list-group-item list-group-item-action active">
-            Want To Attend Events
+          To Attend Events
         </button>
         <h4>upcomming Events</h4>
            <%= link_to  'No Upcoming Events to attend Till now ', events_path , class: 'list-group-item list-group-item-action' if  @curent_user.attendedevent.upcoming.empty? %> 

@@ -32,6 +32,8 @@ Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+Naming/MemoizedInstanceVariableName: 
+    Enabled: false
 Style/EachForSimpleLoop:
   Enabled: false
 Style/AndOr:

@@ -32,12 +32,12 @@ This project was developed by:
 - [x] develop scopes to get pst and upcoming events in the events model.
 
 ## Demo 
-![loginpage](./storage/signup.png)
-![loginpage](./storage/aftersignup.png)
-![loginpage](./storage/login.png)
-![loginpage](./storage/profile.png)
-![loginpage](./storage/allevents.png)
-![loginpage](./storage/newevent.png)
+![loginpage](./public/images/signup.png)
+![loginpage](./public/images/aftersignup.png)
+![loginpage](./public/images/login.png)
+![loginpage](./public/images/profile.png)
+![loginpage](./public/images/allevents.png)
+![loginpage](./public/images/newevent.png)
 
 ## Setup
 

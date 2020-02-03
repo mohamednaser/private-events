@@ -2,13 +2,13 @@
 <%= link_to  "My Profile", profile_path , class: "btn btn-primary"%>
 </h1> 
 
+<h3>Upcoming</h3>
 <div class="events-holder">
-    <% @events.each do |event| -%>        
+    <% @events.upcoming.each do |event| -%>        
     <div class="card card-mb" style="width: 25%;">
       <img class="card-img-top" src="https://via.placeholder.com/180.png/09f/fff" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"> <%= event.title %> </h5>
-
         <p class="card-text"> description : <%= event.description %></p>
         <p class="card-text"> Event Date : <%= event.date %></p>
         <p class="card-text"> Number of attendees : <%= event.EventAttendance.count %></p>
@@ -26,4 +26,31 @@
 
    <% end -%>
   </div>
+</div>
+
+  
+<h3>Past</h3>
+<div class="events-holder">
+    <% @events.past.each do |event| -%>        
+    <div class="card card-mb" style="width: 25%;">
+      <img class="card-img-top" src="https://via.placeholder.com/180.png/09f/fff" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> <%= event.title %> </h5>
+        <p class="card-text"> description : <%= event.description %></p>
+        <p class="card-text"> Event Date : <%= event.date %></p>
+        <p class="card-text"> Number of attendees : <%= event.EventAttendance.count %></p>
+        <p class="card-text"> created at : <%= event.created_at.to_date %></p>
+
+       <%= link_to  "View", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%>
+       <% if event.is_attend? %> 
+        <%= link_to  "Already Attended", '#' , class: 'btn btn-success'%> 
+       <% else %>
+        <%= link_to  "Attend", events_path + '/attend/' + event.id.to_s , class: 'btn btn-primary'%> 
+       <% end %> 
+
+      </div>
+    </div>
+
+   <% end -%>
   </div>
+</div>

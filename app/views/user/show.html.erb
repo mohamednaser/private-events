@@ -23,10 +23,19 @@
         <button type="button" class="list-group-item list-group-item-action active">
             Want To Attend Events
         </button>
-        <% @curent_user.attendedevent.all.each do |event| -%>           
+        <h4>upcomming Events</h4>
+           <%= link_to  'No Upcoming Events to attend Till now ', events_path , class: 'list-group-item list-group-item-action' if  @curent_user.attendedevent.upcoming.empty? %> 
+
+        <% @curent_user.attendedevent.upcoming.each do |event| -%>           
            <%= link_to  event.title, events_path + '/' + event.id.to_s , class: 'list-group-item list-group-item-action'%> 
         <% end -%>
 
+        <h4>past Events</h4>
+           <%= link_to  'No Past Events to attend Till now ', events_path , class: 'list-group-item list-group-item-action' if  @curent_user.attendedevent.past.empty? %> 
+
+        <% @curent_user.attendedevent.past.each do |event| -%>           
+           <%= link_to  event.title, events_path + '/' + event.id.to_s , class: 'list-group-item list-group-item-action'%> 
+        <% end -%>
         </div>
     </div>
 </div>

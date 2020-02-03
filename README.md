@@ -21,6 +21,15 @@ This project was developed by:
 ## Done Work
 
 - [x] built database structure for (Users, Events) tables.
+- [x] create login , signup users
+- [x] allow the users to create event 
+- [x] built profile page 
+- [x] list upcoming and past events in profile page  
+- [x] buld all events page 
+- [x] deivide all events page into two section upcoming and past sections 
+- [x] allow user to attend event 
+- [x] apear basic infocration for every event in all events page 
+- [x] develop scopes to get pst and upcoming events in events model
 
 ## Setup
 
@@ -47,13 +56,6 @@ bundle install
 4- Run Server
 ```console
  rails server
-```
-
-5- To Create A new User You Work With Rails Console 
-
-```console
- $ rails console
- $ User.create(name: 'mohamed naser' , password: '123123' , email: 'admintest@test.com')
 ```
 
 ## Support 

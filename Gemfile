@@ -34,13 +34,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
-  gem 'faker'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
+  gem 'faker'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
+  gem 'sqlite3'
   gem 'webdrivers', '~> 4.0'
 end
 
@@ -54,7 +54,6 @@ group :development do
 end
 
 group :test do
-
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

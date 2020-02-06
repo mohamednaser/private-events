@@ -9,7 +9,7 @@ RSpec.describe 'Test Registeration Componant ' do
     visit signup_path
 
     fill_in 'name', with: 'mohamed naser'
-    fill_in "email",	with: "test@tes.com" 
+    fill_in 'email', with: 'test@tes.com'
     click_on 'register'
 
     expect(page).to have_content('signup success your id is ')

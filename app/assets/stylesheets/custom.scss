@@ -1,0 +1,36 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin flex_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.events-holder {
+  @include flex_box;
+}
+
+.card-mb {
+  margin-bottom: 3%;
+}
+
+.insider-container {
+  width: 80%;
+  margin: auto;
+  border: thick;
+  @include flex_box;
+  justify-content: space-around;
+}
+
+.login-form{
+  width: 80%;
+  margin: auto;
+}
+
+.created_events {
+  width: 45%;
+}
+
+.profile-options{
+  margin-bottom: 2%;
+}

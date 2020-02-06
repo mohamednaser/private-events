@@ -1,0 +1,43 @@
+<h1>Welcome <%= @curent_user.name%></h1>
+
+<div class="profile-options"> 
+  <%= link_to  "Logout", logout_path , class: 'btn btn-danger' , method: :delete%> 
+  <%= link_to  "List All Events", events_path , class: 'btn btn-primary'%> 
+</div>
+
+ <div class = 'insider-container'>
+    <div class= "created_events">
+        <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+            Created Events
+        </button>
+           <%= link_to  "You didn't created any event Till now ", events_path , class: 'list-group-item list-group-item-action' if  @curent_user.created_events.empty? %> 
+
+        <% @curent_user.created_events.all.each do |event| -%>           
+           <%= link_to  event.title, events_path + '/' + id_to_string(event) , class: 'list-group-item list-group-item-action'%> 
+        <% end -%>
+        <%= link_to  "Create New", events_new_path , class: 'btn btn-primary'%> 
+        </div>
+    </div>
+
+    <div class= "created_events">
+        <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active">
+          To Attend Events
+        </button>
+        <h4>upcomming Events</h4>
+           <%= link_to  'No Upcoming Events to attend Till now ', events_path , class: 'list-group-item list-group-item-action' if  @curent_user.attendedevent.upcoming.empty? %> 
+
+        <% @curent_user.attendedevent.upcoming.each do |event| -%>           
+           <%= link_to  event.title, events_path + '/' + id_to_string(event) , class: 'list-group-item list-group-item-action'%> 
+        <% end -%>
+
+        <h4>past Events</h4>
+           <%= link_to  'No Past Events to attend Till now ', events_path , class: 'list-group-item list-group-item-action' if  @curent_user.attendedevent.past.empty? %> 
+
+        <% @curent_user.attendedevent.past.each do |event| -%>           
+           <%= link_to  event.title, events_path + '/' + id_to_string(event) , class: 'list-group-item list-group-item-action'%> 
+        <% end -%>
+        </div>
+    </div>
+</div>

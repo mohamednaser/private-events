@@ -1,24 +1,71 @@
-# README
+# Private Events Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple project for (login , sign up ) users , (create , attend ) events . 
 
-Things you may want to cover:
+This project is a part of Microverse technical curriculum for learning ruby on rails .
 
-* Ruby version
+Click [here](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) for more information about the task.
 
-* System dependencies
+## Authors
 
-* Configuration
+This project was developed by:
 
-* Database creation
+- [Mohamed Naser](https://www.linkedin.com/in/mohamednaseramein/)
+- [Abdulsamii Ajala]()
 
-* Database initialization
+## Used Tools
 
-* How to run the test suite
+- Ruby On Rails
+- Ruby
 
-* Services (job queues, cache servers, search engines, etc.)
+## Done Work
 
-* Deployment instructions
+- [x] built database structure for (Users, Events) tables.
+- [x] create a login , signup users.
+- [x] allows users to create an event .
+- [x] built a profile page.
+- [x] list upcoming and past events on the profile page.
+- [x] build all events page.
+- [x] divide all events page into two sections upcoming and past sections.
+- [x] allows a user to attend an event.
+- [x] appear basic information for every event in all events page. 
+- [x] develop scopes to get pst and upcoming events in the events model.
 
-* ...
+## Demo 
+![loginpage](./public/images/signup.png)
+![loginpage](./public/images/aftersignup.png)
+![loginpage](./public/images/login.png)
+![loginpage](./public/images/profile.png)
+![loginpage](./public/images/allevents.png)
+![loginpage](./public/images/newevent.png)
+
+## Setup
+
+Instructions To Run The Project 
+
+1- Pull the project  
+
+Open your git bash and cd to the location you'd like to put your files the run the command below.
+
+```console
+git clone https://github.com/mohamednaser/private-events
+```
+
+2- install dependances libraries 
+```console
+bundle install
+```
+
+3- Run migration command 
+```console
+ rails db:migrate
+```
+
+4- Run Server
+```console
+ rails server
+```
+
+## Support 
+For Any Recommendations or Bugs you can report [here](https://github.com/mohamednaser/private-events/issues) 
+

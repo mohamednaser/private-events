@@ -6,6 +6,9 @@ module SessionHelper
 
   def login(id)
     @curent_user ||= User.find(id)
+    rescue ActiveRecord::RecordNotFound  
+      @curent_user = nil
+    return   
   end
 
   def logged

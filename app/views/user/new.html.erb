@@ -6,7 +6,6 @@
     <%= msg %>
   </div>
 <% end %>
-<br>
  <%= form_with(url: signup_path , model: @user) do |f| %>
   <div class="form-group">
     <%= f.label :name, "name:" , class: 'exampleInputEmail1'%>
@@ -17,7 +16,7 @@
     <%= f.text_field :email ,class: "form-control" %>
   </div> 
  
-    <%= f.submit "Register" , class: "btn btn-primary"%>
+    <%= f.submit "Register" , class: "btn btn-primary" , name: 'register'%>
 
 </form>
 <% end %>

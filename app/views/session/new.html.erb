@@ -2,7 +2,11 @@
 
 <h1> Login</h1>
  <% flash.each do |type, msg| %>
-<div class="alert alert-success" role="alert">
+ <% if(type == 'success')%>
+  <div class="alert alert-success" role="alert">
+<% else %>
+  <div class="alert alert-danger" role="alert">
+ <% end %>
     <%= msg %>
   </div>
 <% end %>

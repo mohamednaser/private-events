@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'events/index.html.erb', type: :view do
+RSpec.describe 'event/index.html.erb', type: :view do
   before do
     now = Time.now
-    @mohamed = User.create(name: 'mohamed')
+    @mohamed = User.create(name: 'mohamed' , email: 'asd@asd.com')
 
-    @mohamed.events.create([
+    @mohamed.created_events.create([
                          { description: 'party', date: Date.new(now.year, now.month, now.day + 1) },
                          { description: 'beach party', date: Date.new(now.year, now.month, now.day - 1) },
-                         { description: 'birthday party', date: Date.new(now.year, now.month, now.day + 5) }
+                         { description: 'birthday party', date: Date.new(now.year-1, now.month, now.day + 5) }
                        ])
 
     @events = Event.all

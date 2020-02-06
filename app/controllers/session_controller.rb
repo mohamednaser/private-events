@@ -7,7 +7,7 @@ class SessionController < ApplicationController
       cookies.permanent[:user_id] = params[:id]
       redirect_to profile_path
     else
-      redirect_to signup_path, notice: 'error in id'
+      redirect_to login_path, notice: 'There Is No User With This ID'
     end
   end
 

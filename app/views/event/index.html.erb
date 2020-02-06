@@ -14,11 +14,11 @@
         <p class="card-text"> Number of attendees : <%= event.EventAttendance.count %></p>
         <p class="card-text"> created at : <%= event.created_at.to_date %></p>
 
-       <%= link_to  "View", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%>
+       <%= link_to  "View", events_path + '/' + id_to_string(event) , class: 'btn btn-primary'%>
        <% if event.attend?(@curent_user.id) %> 
         <%= link_to  "Already Attended", '#' , class: 'btn btn-success'%> 
        <% else %>
-        <%= link_to  "Attend", events_path + '/attend/' + event.id.to_s , class: 'btn btn-primary'%> 
+        <%= link_to  "Attend", events_path + '/attend/' + id_to_string(event) , class: 'btn btn-primary'%> 
        <% end %> 
 
       </div>
@@ -38,14 +38,14 @@
         <h5 class="card-title"> <%= event.title %> </h5>
         <p class="card-text"> description : <%= event.description %></p>
         <p class="card-text"> Event Date : <%= event.date %></p>
-        <p class="card-text"> Number of attendees : <%= event.EventAttendance.count %></p>
-        <p class="card-text"> created at : <%= event.created_at.to_date %></p>
+        <p class="card-text"> Number of attendees : <%= event_attendance_count(event)%></p>
+        <p class="card-text"> created at : <%= event_date_format(event) %></p>
 
-       <%= link_to  "View", events_path + '/' + event.id.to_s , class: 'btn btn-primary'%>
+       <%= link_to  "View", events_path + '/' + id_to_string(event) , class: 'btn btn-primary'%>
        <% if event.attend?(@curent_user.id) %> 
         <%= link_to  "Already Attended", '#' , class: 'btn btn-success'%> 
        <% else %>
-        <%= link_to  "Attend", events_path + '/attend/' + event.id.to_s , class: 'btn btn-primary' , method: :post %> 
+        <%= link_to  "Attend", events_path + '/attend/' + id_to_string(event) , class: 'btn btn-primary' , method: :post %> 
        <% end %> 
 
       </div>

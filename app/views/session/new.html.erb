@@ -1,0 +1,26 @@
+<div class='login-form'>
+
+<h1> Login</h1>
+ <% flash.each do |type, msg| %>
+ <% if(type == 'success')%>
+  <div class="alert alert-success" role="alert">
+<% else %>
+  <div class="alert alert-danger" role="alert">
+ <% end %>
+    <%= msg %>
+  </div>
+<% end %>
+<br>
+<%= form_with( url: login_path , method: :post) do |f| %>
+  <div class="form-group">
+    <%= f.label :id, "id:" , class: 'exampleInputEmail1'%>
+    <%= f.text_field :id ,class: "form-control" %>
+  </div> 
+    <%= f.submit "login" , class: "btn btn-primary"%>
+
+</form>
+<% end %>
+
+<%= link_to  "signup", signup_path %>
+
+ </div>
